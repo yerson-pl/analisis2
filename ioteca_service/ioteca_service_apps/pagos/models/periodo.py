@@ -4,7 +4,7 @@ from django.db import models
 class Periodo(models.Model):
 
     estado = models.BooleanField(default=False)
-    nombre = models.CharField(max_length=50)
+    nombre = models.CharField(max_length=50, default='')
 
     class Meta:
         verbose_name = "Periodo"
