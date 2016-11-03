@@ -1,13 +1,13 @@
 from django.db import models
-from ioteca_service_apps.eventos.models.evento import Evento
+from ioteca_service_apps.eventos.models.inasistencia import Inasistencia
 from .periodo import Periodo
+from ioteca_service_apps.eventos.models.evento import TimeStampModel
 
 
-class Pago(models.Model):
+class Pago(TimeStampModel):
 
-    inasistencia = models.ForeignKey(Evento)
+    inasistencia = models.ForeignKey(Inasistencia)
     periodo = models.ForeignKey(Periodo)
-    fecha = models.DateTimeField()
     imagen = models.ImageField()
     monto = models.DecimalField(decimal_places=2, max_digits=5)
     num_recibo = models.CharField(max_length=50)
@@ -18,4 +18,4 @@ class Pago(models.Model):
         verbose_name_plural = "Pagos"
 
     def __str__(self):
-        return '%s' % (self.fecha)
+        return ""

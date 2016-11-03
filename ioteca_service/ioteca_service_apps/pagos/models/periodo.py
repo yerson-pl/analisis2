@@ -3,8 +3,8 @@ from django.db import models
 
 class Periodo(models.Model):
 
-    estado = models.BooleanField(default=True)
-    fecha = models.DateField()
+    estado = models.BooleanField(default=False)
+    nombre = models.CharField(max_length=50)
 
     class Meta:
         verbose_name = "Periodo"
