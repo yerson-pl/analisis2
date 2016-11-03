@@ -1,23 +1,12 @@
 from django.db import models
-from ioteca_service_apps.asociacion.models.socio_lote import SocioLote
-from .evento import Evento
-
-
-class TimeStampModel(models.Model):
-
-    creacion = models.DateTimeField(auto_now_add=True)
-    modificacion = models.DateField(auto_now=True)
-
-    class Meta:
-        abstract = True
-        verbose_name = "TimeStampModel"
-        verbose_name_plural = "TimeStampModels"
+from ioteca_service_apps.asociacion.models.lote import Lote
+from .evento import Evento, TimeStampModel
 
 
 class Asistencia(TimeStampModel):
 
     evento = models.ForeignKey(Evento)
-    socio = models.ForeignKey(SocioLote)
+    lote = models.ForeignKey(Lote)
     dni_representante = models.CharField(max_length=8, null=True, blank=True)
 
     class Meta:

@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models.pago import Pago
+from .models.periodo import Periodo
+
+admin.site.register(Pago)
+admin.site.register(Periodo)

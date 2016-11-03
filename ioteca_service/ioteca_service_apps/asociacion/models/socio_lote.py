@@ -17,7 +17,4 @@ class SocioLote(models.Model):
         verbose_name_plural = "SocioLotes"
 
     def __str__(self):
-        return '%s %s %s' % (
-            self.socio.persona.first_name,
-            self.socio.persona.documento_identidad,
-            self.lote_socio.lote)
+        return "hola"
